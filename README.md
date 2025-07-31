@@ -142,7 +142,7 @@ At `rloo_k=8`, all optimization methods except String-Level Processing encounter
 
 | Method | rloo_k=2 | rloo_k=4 | rloo_k=8 | Status |
 |--------|----------|----------|----------|---------|
-| **Basic** | 14.38GB | 26.99GB | 23.87GB | Completed |
+| **Basic** | 14.38GB | 26.99GB | **OOM** | Failed at k=8 |
 | **Lazy** | 14.49GB | 27.22GB | **OOM** | Failed at k=8 |
 | **RepeatSampler** | 14.48GB | 27.22GB | **OOM** | Failed at k=8 |
 | **String-Level** | 6.40GB | 11.01GB | 20.25GB | **All Completed** |
