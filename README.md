@@ -1,5 +1,20 @@
 # TRL RLOO Memory Optimization Project
 
+<table>
+<tr>
+<td width="50%">
+
+![Memory Usage Trends](results/rloo_individual_ultra_smooth.png)
+
+</td>
+<td width="50%">
+
+![Peak Memory Comparison](results/peak_memory_comparison.png)
+
+</td>
+</tr>
+</table>
+
 **RLOO Trainer Memory Optimization and Performance Improvement**
 
 [한국어 문서 (Korean Documentation)](docs/README_ko.md)
@@ -34,28 +49,28 @@
 │   └── RLOO_Memory_Optimization_Task.md       # Task specifications
 │
 ├── experiments/                               # Experiment scripts
-│   ├── train.py                              # RLOO training script
-│   ├── config.py                             # Experiment configuration
-│   ├── memory_monitor.py                     # Memory monitoring
-│   └── run_*_rloo*.sh                        # Individual experiment scripts
+│   ├── train.py                               # RLOO training script
+│   ├── config.py                              # Experiment configuration
+│   ├── memory_monitor.py                      # Memory monitoring
+│   └── run_*_rloo*.sh                         # Individual experiment scripts
 │
 ├── results/data/                              # Experimental results
-│   ├── results_basic/                        # Basic RLOO results
-│   ├── results_lazy/                         # Lazy Generation results
-│   ├── results_repeatsampler/                # RepeatSampler results
-│   └── results_string/                       # String-Level results
+│   ├── results_basic/                         # Basic RLOO results
+│   ├── results_lazy/                          # Lazy Generation results
+│   ├── results_repeatsampler/                 # RepeatSampler results
+│   └── results_string/                        # String-Level results
 │
 ├── visualization/                             # Visualization and analysis
-│   ├── combine_gpu_memory_data.py            # Data aggregation script
-│   ├── create_memory_charts.py               # Chart generation script
-│   └── *.png                                 # Generated charts
+│   ├── combine_gpu_memory_data.py             # Data aggregation script
+│   ├── create_memory_charts.py                # Chart generation script
+│   └── *.png                                  # Generated charts
 │
 ├── models/                                    # Pre-trained models
 ├── trl/                                       # TRL library (modified version)
 │
 ├── run_*.sh                                   # Main experiment runners
-├── combine_results.sh                        # Result aggregation
-└── visualize_results.sh                      # Visualization runner
+├── combine_results.sh                         # Result aggregation
+└── visualize_results.sh                       # Visualization runner
 ```
 
 ## Key Achievements
@@ -72,26 +87,26 @@ At `rloo_k=8`, all optimization methods except String-Level Processing encounter
 ## Implemented Optimization Methods
 
 ### 1. String-Level Processing (Best Performance)
-**What**: OnlineDPO-style string processing approach
-**Why**: Avoids token-level replication by processing prompts at string level before tokenization
-**Implementation**: 
+- **What**: OnlineDPO-style string processing approach
+- **Why**: Avoids token-level replication by processing prompts at string level before tokenization
+- **Implementation**: 
 - Decode prompts to strings
 - Repeat at string level
 - Re-tokenize all at once
 - Results in significant memory savings
 
 ### 2. Lazy Generation
-**What**: Sequential generation approach
-**Why**: Reduces peak memory usage during generation phase
-**Implementation**:
+- **What**: Sequential generation approach
+- **Why**: Reduces peak memory usage during generation phase
+- **Implementation**:
 - Generate responses sequentially for each rloo_k iteration
 - Concatenate results to match original API
 - Maintains compatibility while reducing memory spikes
 
 ### 3. RepeatSampler
-**What**: GRPO-style data sampling optimization
-**Why**: Avoids data replication at the sampling level
-**Implementation**:
+- **What**: GRPO-style data sampling optimization
+- **Why**: Avoids data replication at the sampling level
+- **Implementation**:
 - Implement RepeatSampler similar to GRPO
 - Use index repetition instead of data duplication
 - Theoretical memory efficiency gains
