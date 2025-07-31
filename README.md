@@ -9,7 +9,7 @@
 </td>
 <td width="50%">
 
-![Peak Memory Comparison](peak_memory_comparison.png)
+![Peak Memory Comparison](img.png)
 
 </td>
 </tr>
