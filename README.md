@@ -4,12 +4,12 @@
 <tr>
 <td width="50%">
 
-![Memory Usage Trends](results/rloo_individual_ultra_smooth.png)
+![Memory Usage Trends](rloo_individual_ultra_smooth.png)
 
 </td>
 <td width="50%">
 
-![Peak Memory Comparison](results/peak_memory_comparison.png)
+![Peak Memory Comparison](peak_memory_comparison.png)
 
 </td>
 </tr>
