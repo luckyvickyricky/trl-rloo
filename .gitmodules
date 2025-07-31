@@ -3,4 +3,4 @@
 	url = https://github.com/luckyvickyricky/trl.git
 [submodule "lm-eval"]
 	path = lm-eval
-	url = https://github.com/EleutherAI/lm-evaluation-harness.git
+	url = https://github.com/luckyvickyricky/lm-evaluation-harness.git
