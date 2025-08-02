@@ -53,20 +53,20 @@ Key finding: At rloo_k=8, the baseline implementation encounters OOM errors, whi
 ## Visualization Results
 
 ### Peak Memory Comparison
-![Peak Memory Comparison](results/peak_memory_comparison.png)
+![Peak Memory Comparison](results-prev/peak_memory_comparison.png)
 
 ### Memory Usage Patterns
 <table>
 <tr>
 <td width="50%">
 
-![Peak Preserving Smoothing](results/rloo_individual_peak_preserving.png)
+![Peak Preserving Smoothing](results-prev/rloo_individual_peak_preserving.png)
 *Peak-preserving smoothing (accurate peak values)*
 
 </td>
 <td width="50%">
 
-![Ultra Smooth Visualization](results/rloo_individual_ultra_smooth.png)
+![Ultra Smooth Visualization](results-prev/rloo_individual_ultra_smooth.png)
 *Ultra-smooth visualization (peak values not accurate due to smoothing)*
 
 </td>
