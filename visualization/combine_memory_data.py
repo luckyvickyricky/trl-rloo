@@ -14,8 +14,6 @@ def combine_memory_data():
     # Define method mapping
     methods = {
         'results_basic': 'Basic',
-        'results_lazy': 'Lazy',
-        'results_repeatsampler': 'RepeatSampler', 
         'results_string-level': 'String'
     }
     

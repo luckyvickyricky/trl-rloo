@@ -98,8 +98,6 @@ def create_peak_memory_comparison(df):
     # Define colors for methods
     method_colors = {
         'Basic': '#e74c3c',
-        'Lazy': '#f39c12', 
-        'RepeatSampler': '#27ae60',
         'String': '#3498db'
     }
     
@@ -136,14 +134,12 @@ def create_individual_peak_preserving_plots(df):
         8: '#9b59b6'     # Purple
     }
     
-    fig, axes = plt.subplots(2, 2, figsize=(20, 14))
+    fig, axes = plt.subplots(1, 2, figsize=(20, 7))
     
-    methods = ['Basic', 'Lazy', 'RepeatSampler', 'String']
+    methods = ['Basic', 'String']
     
     for idx, method in enumerate(methods):
-        row = idx // 2
-        col = idx % 2
-        ax = axes[row, col]
+        ax = axes[idx]
         
         method_data = df[df['method'] == method]
         
@@ -199,14 +195,12 @@ def create_individual_ultra_smooth_plots(df):
         8: '#9b59b6'     # Purple
     }
     
-    fig, axes = plt.subplots(2, 2, figsize=(20, 14))
+    fig, axes = plt.subplots(1, 2, figsize=(20, 7))
     
-    methods = ['Basic', 'Lazy', 'RepeatSampler', 'String']
+    methods = ['Basic', 'String']
     
     for idx, method in enumerate(methods):
-        row = idx // 2
-        col = idx % 2
-        ax = axes[row, col]
+        ax = axes[idx]
         
         method_data = df[df['method'] == method]
         
@@ -263,7 +257,7 @@ def create_performance_summary(df):
     basic_data = df[df['method'] == 'Basic']
     
     savings_data = []
-    for method in ['Lazy', 'RepeatSampler', 'String']:
+    for method in ['String']:
         method_data = df[df['method'] == method]
         
         for rloo_k in ['2', '4', '8']:

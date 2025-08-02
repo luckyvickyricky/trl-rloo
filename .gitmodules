@@ -1,6 +1,4 @@
 [submodule "trl"]
 	path = trl
 	url = https://github.com/luckyvickyricky/trl.git
-[submodule "lm-eval"]
-	path = lm-eval
-	url = https://github.com/luckyvickyricky/lm-evaluation-harness.git
+
