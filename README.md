@@ -35,7 +35,7 @@ The project demonstrates string-level processing optimization for TRL RLOO Train
 
 **Test Parameters:**
 - rloo_k values: 2, 4, 8
-- Sequence length: ~512 tokens
+- Sequence length: 3.1K tokens
 - Multiple runs for statistical validity
 
 ## Memory Optimization Results
